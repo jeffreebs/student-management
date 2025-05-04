@@ -28,6 +28,7 @@ def enter_students(students):
 
     except Exception as e:
         print("Error to enter the students:", e)
+    return students
 
 
 
