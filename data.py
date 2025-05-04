@@ -13,21 +13,31 @@ def data_export(students):
 
 def data_import():
     if not os.path.exists(f1le):
-        print("Not exist CSV file")
-    return[]
+        print("The File is null.")
+        return []
+
+    students = []
+    try:
+        with open(f1le, mode="r") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                try:
+                    student = {
+                        "name": row["name"],
+                        "section": row["section"],
+                        "Spanish": float(row["Spanish"]),
+                        "English": float(row["English"]),
+                        "Science": float(row["Science"]),
+                        "Social Studies": float(row["Social Studies"]),
+                    }
+                    students.append(student)
+                except ValueError:
+                    print(f" Error in data students'{row['name']}'. Not add the file.")
+    except Exception as e:
+        print(f" Error to read the file: {e}")
+    
+    return students
 
 
-    with open(f1le, mode= "r",) as f:
-        reader = csv.DictReader(f)
-        return [
-            {
-                "name": row["name"],
-                "section": row ["section"],
-                "Spanish": float(row["Spanish"]),
-                "English": float(row["English"]),
-                "Science": float(row["Science"]),
-                "Social Studies": float(row["Social Studies"]),
-            }
 
-            for row in reader
-        ]
+    
