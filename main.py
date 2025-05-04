@@ -6,14 +6,13 @@ from data import data_export
 students = []
 
 def main():
-    global students
     students = data_import()
 
     while True:
         option= show_menu()
 
         if option == "1" : 
-            enter_students(students)
+            students=enter_students(students)
         elif option == "2" :
             show_students(students)
         elif option == "3" :
