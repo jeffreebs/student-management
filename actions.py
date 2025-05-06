@@ -1,7 +1,7 @@
 def enter_students(students):
     try:
-        n = int(input("How many students do you want to enter: ? "))
-        for x in range(n):
+        number_of_students = int(input("How many students do you want to enter: ? "))
+        for x in range(number_of_students):
             name = input ("Enter the students name please : ")
             section= input("Section : ").strip()
 

@@ -3,10 +3,11 @@ from actions import *
 from data import  data_import
 from data import data_export
 
-students = []
+
 
 def main():
     students = data_import()
+    
 
     while True:
         option= show_menu()

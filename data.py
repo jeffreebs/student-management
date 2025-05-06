@@ -1,10 +1,11 @@
 import csv
 import os
 
-f1le = "students.csv"
+
 
 def data_export(students):
-    with open(f1le,mode = "w",)as f:
+    filename = "students.csv"
+    with open(filename,mode = "w",)as f:
         space=["name", "section", "Spanish", "English", "Science", "Social Studies" ]
         writer = csv.DictWriter(f,fieldnames=space)
         writer.writeheader()
@@ -12,13 +13,14 @@ def data_export(students):
     print("Data export successfully ")
 
 def data_import():
-    if not os.path.exists(f1le):
+    filename = "students.csv"
+    if not os.path.exists(filename):
         print("The File is null.")
         return []
 
     students = []
     try:
-        with open(f1le, mode="r") as f:
+        with open(filename, mode="r") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 try:
