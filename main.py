@@ -6,7 +6,7 @@ from data import data_export
 
 
 def main():
-    students = data_import()
+    students = []
     
 
     while True:
